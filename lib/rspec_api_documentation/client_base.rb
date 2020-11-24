@@ -89,7 +89,7 @@ module RspecApiDocumentation
       return nil if response_body.empty?
 
       formatter = RspecApiDocumentation.configuration.response_body_formatter
-      formatter.call(response_content_type, response_body)
+      return formatter.call(response_content_type, response_body)
     end
 
     def clean_out_uploaded_data(params, request_body)
